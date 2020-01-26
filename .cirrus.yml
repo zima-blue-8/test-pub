@@ -5,9 +5,9 @@ test_task:
   matrix:
     - container:
         image: ubuntu16.04
-    - container:
+    - allow_failures: true
+      container:
         image: ubuntu18.04
-        allow_failures: true
     - container:
         image: debian:7
     - container:
