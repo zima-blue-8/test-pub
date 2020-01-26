@@ -2,6 +2,16 @@ container:
   image: python:slim
 
 test_task:
+  matrix:
+    - container:
+        image: ubuntu16.04
+    - container:
+        image: ubuntu18.04
+        allow_failures: true
+    - container:
+        image: debian:7
+    - container:
+        image: debian:8
   pip_cache:
     folder: ~/.cache/pip
     fingerprint_script: echo $PYTHON_VERSION && cat requirements.txt
